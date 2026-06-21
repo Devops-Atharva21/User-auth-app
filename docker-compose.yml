@@ -1,0 +1,26 @@
+services:
+  app:
+    build:
+      context: .
+    container_name: auth-system-app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://mongo:27017/authdb
+      - JWT_SECRET=super_secret_jwt_key_for_local_docker
+    depends_on:
+      - mongo
+    restart: unless-stopped
+
+  mongo:
+    image: mongo:latest
+    container_name: auth-system-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    restart: unless-stopped
+
+volumes:
+  mongo_data:

@@ -1,0 +1,6 @@
+{
+  "name": "User Authentication System",
+  "description": "Full-stack authentication system with Node.js, Express, MongoDB, and JWT.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
